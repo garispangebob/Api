@@ -1,0 +1,74 @@
+## .NET Core ##
+/bin/
+/obj/
+*.user
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+*.nupkg
+*.swp
+*.pidb
+*.DS_Store
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# IDE специфичное
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.VC.opendb
+
+# NuGet
+.nuget/
+packages/
+*.nupkg
+NuGet.exe
+
+# Тестовые результаты
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Локальные настройки
+appsettings.Development.json
+appsettings.Local.json
+
+# Docker
+docker-compose.override.yml
+
+# Файлы публикации
+.publish/
+*.pubxml
+
+# Файлы пользователей
+*.userprefs
+
+# ReSharper
+_ReSharper.*/
+*.ReSharper
+
+# Azure Functions
+func.exe
+func.dll
