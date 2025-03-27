@@ -10,7 +10,6 @@ public class MarkingProduct
 
     public MarkingProduct(string name, string gtin, User user)
     {
-        Id = Guid.NewGuid();
         Name = name;
         Gtin = gtin;
         User = user;
