@@ -3,7 +3,8 @@ namespace Api.Core.Entities;
 public class User
 {
     public Guid Id { get; private set; }
-    public string? Name { get; private set; }
+    public string Login { get; private set; }
+    public string Password { get; private set; }
     public string? CrptToken { get; private set; }
     public Guid SecurityToken { get; private set; }
     private readonly List<DraftProduct> _draftProducts = new();
@@ -13,10 +14,11 @@ public class User
     private readonly List<MarkingProduct> _markingProducts = new();
     public IReadOnlyCollection<MarkingProduct> MarkingProducts => _markingProducts.AsReadOnly();
 
-    public User(string name)
+    public User(string login, string password)
     {
         Id = Guid.NewGuid();
-        Name = name;
+        Login = login;
+        Password = password;
         //TODO: Сделать хеширование
         SecurityToken = Guid.NewGuid();
     }
@@ -36,5 +38,9 @@ public class User
     {
         //TODO: сделать хеширование
         CrptToken = token;
+    }
+    public void SetPassword(string password)
+    {
+        Password = password;
     }
 }

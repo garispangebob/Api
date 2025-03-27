@@ -6,11 +6,12 @@ public class DraftProduct
     public string Name { get; private  set; }
     private readonly List<Tap> _taps = new();
     public IReadOnlyCollection<Tap> Taps => _taps.AsReadOnly();
-
-    public DraftProduct(string name)
+    public User User { get; private set; }
+    public Guid UserId { get; private set; }
+    public DraftProduct(string name, User user)
     {
-        Id = Guid.NewGuid();
         Name = name;
+        User = user;
     }
     public void AddTap(Tap tap)
     {
