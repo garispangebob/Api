@@ -7,6 +7,7 @@ public class User
     public string Password { get; private set; }
     public string? CrptToken { get; private set; }
     public Guid SecurityToken { get; private set; }
+    public string? Inn { get; private set; } 
     private readonly List<DraftProduct> _draftProducts = new();
     public IReadOnlyCollection<DraftProduct> DraftProducts => _draftProducts.AsReadOnly();
     private readonly List<HardAlcoProduct> _hardAlcoProducts = new();
@@ -14,13 +15,14 @@ public class User
     private readonly List<MarkingProduct> _markingProducts = new();
     public IReadOnlyCollection<MarkingProduct> MarkingProducts => _markingProducts.AsReadOnly();
 
-    public User(string login, string password)
+    public User(string login, string password, string inn)
     {
         Id = Guid.NewGuid();
         Login = login;
         Password = password;
         //TODO: Сделать хеширование
         SecurityToken = Guid.NewGuid();
+        Inn = inn;
     }
     public void AddDraftProduct(DraftProduct draftProduct)
     {
@@ -42,5 +44,10 @@ public class User
     public void SetPassword(string password)
     {
         Password = password;
+    }
+
+    public void SetInn(string inn)
+    {
+        Inn = inn;
     }
 }
