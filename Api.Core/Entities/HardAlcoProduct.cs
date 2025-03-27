@@ -8,7 +8,6 @@ public class HardAlcoProduct
     public Guid UserId { get; private set; }
     public HardAlcoProduct(string name, User user)
     {
-        Id = Guid.NewGuid();
         Name = name;
         User = user;
     }

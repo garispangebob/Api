@@ -23,5 +23,5 @@ public class ChildModifierDto
 
     [JsonProperty("splittable")] public bool Splittable { get; set; }
 
-    [JsonProperty("childModifiers")] public ChildModifierDto ChildModifiers { get; set; }
+    [JsonProperty("childModifiers")] public List<ChildModifierDto> ChildModifiers { get; set; }
 }
