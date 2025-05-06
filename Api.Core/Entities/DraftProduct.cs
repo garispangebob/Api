@@ -1,16 +1,14 @@
 namespace Api.Core.Entities;
 
-public class DraftProduct
+public abstract class DraftProduct : Product
 {
-    public Guid Id { get; private set; }
-    public string Name { get; private  set; }
     private readonly List<Tap> _taps = new();
     public IReadOnlyCollection<Tap> Taps => _taps.AsReadOnly();
     public User User { get; private set; }
     public Guid UserId { get; private set; }
-    public DraftProduct(string name, User user)
+
+    protected DraftProduct(string name, User user) : base(name)
     {
-        Name = name;
         User = user;
     }
     public void AddTap(Tap tap)
