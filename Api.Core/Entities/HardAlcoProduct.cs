@@ -1,14 +1,12 @@
 namespace Api.Core.Entities;
 
-public class HardAlcoProduct
+public abstract class HardAlcoProduct : Product
 {
-    public Guid Id { get; private set; }
-    public string Name { get; private set; }
     public User User { get; private set; }
     public Guid UserId { get; private set; }
-    public HardAlcoProduct(string name, User user)
+
+    protected HardAlcoProduct(string name, User user) : base(name)
     {
-        Name = name;
         User = user;
     }
 }
